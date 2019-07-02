@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "svm.py", line 37, in <module>
+    pickle.dump(clf, open(filename, 'wb'))
+NameError: name 'pickle' is not defined

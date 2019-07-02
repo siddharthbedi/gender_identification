@@ -1,6 +1,7 @@
 import face_recognition
 from sklearn import svm
 import os
+import pickle
 
 # Training the SVC classifier
 
@@ -9,17 +10,17 @@ encodings = []
 names = []
 
 # Training directory
-train_dir = os.listdir('C:/Users/HP/face_recognition_examples/train/')
+train_dir = os.listdir('./train/')
 
 # Loop through each person in the training directory
 for person in train_dir:
-    pix = os.listdir("C:/Users/HP/face_recognition_examples/train/" + person)
+    pix = os.listdir("./train/" + person)
     #print(pix)
     
     # Loop through each training image for the current person
     for person_img in pix:
         try:
-            face = face_recognition.load_image_file("C:/Users/HP/face_recognition_examples/train/" + person + "/" + person_img)
+            face = face_recognition.load_image_file("./train/" + person + "/" + person_img)
             face_enc = face_recognition.face_encodings(face)[0]
             
             # Add face encoding for current image with corresponding label (name) to the training data
