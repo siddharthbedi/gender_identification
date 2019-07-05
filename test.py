@@ -12,12 +12,12 @@ filename = "./finalized_model.sav"
 # load the model from disk
 clf = pickle.load(open(filename, 'rb'))
 
-image_path = os.listdir("C:/Users/HP/Desktop/data/")
+image_path = os.listdir("/data/")
 
 for file in image_path:
 
 
-	test_image = face_recognition.load_image_file('C:/Users/HP/Desktop/data/'+file)
+	test_image = face_recognition.load_image_file(image_path + file)
 
 	# Find all the faces in the test image using the default HOG-based model
 	face_locations = face_recognition.face_locations(test_image)
