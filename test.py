@@ -12,7 +12,7 @@ filename = "./finalized_model.sav"
 # load the model from disk
 clf = pickle.load(open(filename, 'rb'))
 
-image_path = os.listdir("/data/")
+image_path = os.listdir("data/")
 
 for file in image_path:
 
